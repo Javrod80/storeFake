@@ -1,6 +1,7 @@
 
 let response = [];
 
+// productos de electronica
 async function fakeStore() {
     try {
         let res = await fetch('https://fakestoreapi.com/products/category/electronics')
@@ -43,6 +44,7 @@ function makeVisual() {
 
 }
 
+// visualizar productos
 
 function showProducts() {
     let divContainerProduct = document.getElementById("productContainer")
