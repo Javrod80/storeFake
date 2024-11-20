@@ -2,19 +2,15 @@
 
   
 
-   
-  
 
 
-
-
-
-async function fechtUsers(event) {
-
+async function fetchUsers(event) {
+    event.preventDefault();
+    let form = document.getElementById("loginForm")
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     console.log(username)
-    event.preventDefault();
+   
     try {
         let response = await fetch('https://fakestoreapi.com/auth/login', {
             method: 'POST',
@@ -36,13 +32,14 @@ async function fechtUsers(event) {
     } catch (error) {
         console.error(error);
         document.getElementById("response").textContent = "Login failed.";
+        responseDiv.innerHTML="";
 
     }
-
-
+    form.reset();
+   
 }
 
-fechtUsers();
+
 
 
 /*
