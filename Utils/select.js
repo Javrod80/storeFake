@@ -39,6 +39,14 @@ function makeVisual() {
     let productDisplayContainer = document.createElement("div");
     productDisplayContainer.id = "productDisplayContainer";
 
+
+    let button = document.createElement("button");
+    button.id = "addButton";
+    button.innerText = "Añadir producto";
+
+    divGeneralContainer.appendChild(button);
+
+
     divGeneralContainer.appendChild(productDisplayContainer);
 
     document.body.appendChild(divGeneralContainer);
@@ -138,4 +146,14 @@ function displayProduct(product) {
     
 
 
+function addButton(){
+   let quantity = 0;
 
+   let button = document.getElementById("button");
+   
+
+
+
+
+
+}

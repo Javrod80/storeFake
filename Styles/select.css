@@ -78,3 +78,10 @@ body {
     /* Mantener proporciones */
     margin-top: 10px;
 }
+
+#addButton{
+  width: 150px;
+  height: 45px;
+  
+
+}
