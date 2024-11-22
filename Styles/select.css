@@ -82,6 +82,65 @@ body {
 #addButton{
   width: 150px;
   height: 45px;
-  
+  color: orange;
+  background-color: rgb(247, 245, 245);
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
 
+}
+#addButton:hover{
+  background-color: rgb(255, 255, 255);
+  color: orange;
+  border: 1px solid orange;
+}
+.cart-title {
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.product-name {
+    color: green;
+    font-weight: bold;
+}
+
+.product-price {
+    color: orange;
+}
+
+.cart-total {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.clear-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.clear-button:hover {
+    background-color: gray;
 }
