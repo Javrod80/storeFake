@@ -23,10 +23,6 @@ function makeVisual() {
     defaultOption.disabled = true;
     selectProduct.appendChild(defaultOption);
 
-
-
-
-
     divSelect.appendChild(selectProduct);
 
    
@@ -97,12 +93,12 @@ async function allProdcuts() {
 allProdcuts();
 
 // seleccionar productos
-async function showProducts() { 
-
-    
+ function showProducts() { 
 
     let productList = JSON.parse(localStorage.getItem("ProductList"));
     let select = document.getElementById("selectProduct");
+
+     
 
     productList.forEach(product => {
         let optionProduct = document.createElement("option");
@@ -112,21 +108,25 @@ async function showProducts() {
        
         
     });
-       
-    // Agregar evento para seleccionar producto
-    select.addEventListener("change", async () => {
-        let selectedValue = select.value;
-        try {
-            let res = await fetch(`https://fakestoreapi.com/products/${selectedValue}`);
-            let data = await res.json();
+     // Agregar el evento para manejar la selección
+     select.addEventListener("change", () => {
+         let selectedValue = select.value;
 
-            // Mostrar el producto seleccionado
-            displayProduct(data);
-        } catch (error) {
-            console.log(error);
-            alert(error);
-        }
-    });
+         // Buscar el producto seleccionado
+         let selectedProduct = productList.find(product => product.id == selectedValue);
+
+         if (selectedProduct) {
+             // Mostrar el producto seleccionado
+             displayProduct(selectedProduct);
+         } else {
+             alert("Producto no encontrado");
+         }
+     });
+
+
+
+       
+ 
 }
     
 // mostrar producto
@@ -244,5 +244,55 @@ function clearCart() {
     cart = []; // Vaciar el array
     updateCartDisplay(); // Actualizar la pantalla
 }
+
+
+/*
+
+// seleccionar productos
+async function showProducts() { 
+
+    
+
+    let productList = JSON.parse(localStorage.getItem("ProductList"));
+    let select = document.getElementById("selectProduct");
+
+    productList.forEach(product => {
+        let optionProduct = document.createElement("option");
+        optionProduct.value = product.id;
+        optionProduct.textContent = product.id;
+        select.appendChild(optionProduct);
+       
+        
+    });
+    select.addEventListener("change", () => {
+        let selectedValue = select.value;
+        let selectedProduct = products.find(product => product.id == selectedValue);
+
+        if (selectedProduct) {
+            // Mostrar el producto seleccionado
+            displayProduct(selectedProduct);
+        } else {
+            alert("Producto no encontrado");
+        }
+    });
+
+
+
+       
+   /* // Agregar evento para seleccionar producto
+    select.addEventListener("change", async () => {
+        let selectedValue = select.value;
+        try {
+            let res = await fetch(`https://fakestoreapi.com/products/${selectedValue}`);
+            let data = await res.json();
+
+            // Mostrar el producto seleccionado
+            displayProduct(data);
+        } catch (error) {
+            console.log(error);
+            alert(error);
+        }
+    });
+    */
 
 
